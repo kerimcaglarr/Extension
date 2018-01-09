@@ -1,0 +1,109 @@
+
+
+import UIKit
+
+//Extension ile herhangi birşeye yeni bir özellik katılır
+
+var x = "Deneme" //String bir değişken
+
+x.characters.count //Swift 3 ile
+
+x.count // Swift 4
+
+extension String{
+
+    var say:Int{
+
+        return self.characters.count
+
+    }
+
+}
+
+x.say
+
+var y = "Türkçe Swift Programlama"
+
+y.say
+
+var a = 3.0 //Afrika ülkelerinden birinin para birimi
+
+var b = 685.0 // Ülkemizin para birimi
+
+var c = a/b
+
+//Virgülden sonra 2 basamak için : Sayı 100 ile çarpılır. 10 un 2. kuvveti
+
+//Virgülden sonra 3 basamak için : Sayı 1000 ile çarpılır. 10 un 3. kuvveti
+
+//Virgülden sonra 4 basamak için : Sayı 10000 ile çarpılır. 10 un 4. kuvveti
+
+(c*1000)
+
+var d = (c*1000).rounded() //sayıyı yuvarlar
+
+d/1000
+
+extension Double{
+
+    
+
+    func sayiyiYuvarla(basamak:Int)->Double{
+
+        let carpan = pow(10.0, Double(basamak))
+
+        return (self*carpan).rounded()/carpan
+
+    }
+
+}
+
+var e = 0.023456
+
+e.sayiyiYuvarla(basamak: 4)
+
+extension Int{
+
+    mutating func kareAl(){
+
+       self = self*self
+
+    }
+
+    
+
+    func kareAlmak()->Int{
+
+        return self*self
+
+    }
+
+    
+
+    func cift()->String{
+
+        
+
+        if self % 2 == 0{
+
+            return "Sayı Çifttir"
+
+        } else{
+
+            return "Sayı Tektir"
+
+        }
+
+    }
+
+}
+
+var k = 4
+
+k.kareAl()
+
+6.kareAlmak()
+
+57.cift()
+
+80.cift()
